@@ -1,0 +1,34 @@
+{
+	"name": "webpack_test",
+	"version": "1.0.0",
+	"description": "webpack test project",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "webpack",
+		"watch": "webpack --watch",
+		"dev-server": "webpack-dev-server --hot --host 0.0.0.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "http://github.com/ianchen0419/webpack"
+	},
+	"author": "ianchen0419",
+	"license": "ISC",
+	"devDependencies": {
+		"css-loader": "^3.0.0",
+		"mini-css-extract-plugin": "^0.7.0",
+		"node-sass": "^4.12.0",
+		"sass-loader": "^7.1.0",
+		"style-loader": "^0.23.1",
+		"url-loader": "^2.0.1",
+		"webpack": "^4.35.3",
+		"webpack-cli": "^3.3.5",
+		"webpack-dev-server": "^3.7.2"
+	},
+	"dependencies": {
+		"bootstrap": "^4.3.1",
+		"jquery": "^3.4.1",
+		"popper.js": "^1.15.0"
+	}
+}
