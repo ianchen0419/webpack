@@ -11,7 +11,6 @@ import '../sass/style.sass';
 import '../sass/button.sass';
 import '../icomoon/style.css';
 
-// import './base.js';
 var $base = require('./base.js');
 window.$base = new $base();
 // import {myButton, myDesc} from './base';
