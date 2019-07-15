@@ -5,24 +5,18 @@ var MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
 	mode: 'development',
     entry: './inc/js/init.js',
+    devtool: 'inline-source-map',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
     module: {
         rules: [{
-                test: /\.(scss|sass)$/,
+                test: /\.(scss|sass|css)$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    "css-loader",
-                    "sass-loader"
-                ]
-            },
-            {
-                test: /\.css$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    "css-loader"
+                    "css-loader?sourceMap",
+                    "sass-loader?sourceMap"
                 ]
             },
             {
@@ -37,14 +31,15 @@ module.exports = {
         }),
         new webpack.ProvidePlugin({
             $: 'jquery',
-            jQuery: 'jquery'
-        }),
-        new webpack.ProvidePlugin({
-            $: 'jquery',
             jQuery: 'jquery',
             'window.jQuery': 'jquery',
-            Popper: ['popper.js', 'default']
+            'window.$': 'jquery',
+            Popper: ['popper.js', 'default'],
+            PrimeUI: 'primeui'
         })
     ]
 
 }
+
+// var $ = require('jquery');
+// require('jquery-ui');

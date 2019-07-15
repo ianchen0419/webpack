@@ -1,7 +1,7 @@
 {
-	"name": "webpack_test",
+	"name": "primeui_test",
 	"version": "1.0.0",
-	"description": "webpack test project",
+	"description": "primeui test project",
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
@@ -11,7 +11,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "http://github.com/ianchen0419/webpack"
+		"url": "http://github.com/ianchen0419/primeui"
 	},
 	"author": "ianchen0419",
 	"license": "ISC",
@@ -28,7 +28,10 @@
 	},
 	"dependencies": {
 		"bootstrap": "^4.3.1",
+		"font-awesome": "^4.7.0",
 		"jquery": "^3.4.1",
-		"popper.js": "^1.15.0"
+		"popper.js": "^1.15.0",
+		"primeui": "^4.1.15",
+		"webpack-jquery-ui": "^2.0.1"
 	}
 }

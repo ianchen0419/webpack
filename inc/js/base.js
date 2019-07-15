@@ -2,7 +2,8 @@
 // export var myDesc = $('#my-desc');
 module.exports = function $base() {
 	//js測試
-	console.log('234234234');
+	console.log('111111');
+	$('.dropdown').puidropdown();
 
 	//jq測試
 	$('#my-button').click(function(){
