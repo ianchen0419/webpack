@@ -3,19 +3,19 @@
 // 要寫功能的js去找base.js
 
 import 'jquery';
-import 'webpack-jquery-ui';
-import 'primeui';
+import 'bootstrap';
 
-import '../icomoon/style.css';
-import 'font-awesome/css/font-awesome.css';
-import 'webpack-jquery-ui/css';
-import 'primeui/themes/omega/theme.css';
-import 'primeui/primeui.css'
-
+import 'bootstrap/scss/bootstrap.scss';
 import '../sass/_color.sass';
 import '../sass/style.sass';
 import '../sass/button.sass';
-
+import '../icomoon/style.css';
 
 var $base = require('./base.js');
 window.$base = new $base();
+// import {myButton, myDesc} from './base';
+
+// myDesc.hide();
+// myButton.on('click', function(e){
+//     myDesc.toggle();
+// });
