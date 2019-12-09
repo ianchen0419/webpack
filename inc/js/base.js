@@ -1,16 +1,6 @@
-// export var myButton = $('#my-button');
-// export var myDesc = $('#my-desc');
-module.exports = function $base() {
-	//js測試
-	console.log('234234234');
+// 寫一些 jQuery 效果
 
-	//jq測試
-	$('#my-button').click(function(){
-		$(this).fadeOut();
-	})
-
-	//function測試
-	this.hi=function(){
-		console.log('hihiihihihihihihi');
-	}
-}
+myDesc.hide();
+myButton.on('click', function(e){
+    myDesc.toggle();    
+});
