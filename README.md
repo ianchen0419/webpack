@@ -72,7 +72,7 @@ package.json 的 scripts 加入一段
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "webpack inc/js/main.js --output dist/bundle.js --mode development" //加這裡
+		"build": "webpack inc/js/.js --output dist/bundle.js --mode development" //加這裡
 	},
 	"author": "",
 	"license": "ISC"
