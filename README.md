@@ -1,9 +1,6 @@
 Webpack
 ===
 教你如何建立一個 webpack 4 專案
-[Github](https://github.com/ianchen0419/webpack)
-
-[TOC]
 
 # 前情提要
 
@@ -53,11 +50,11 @@ npm install --save-dev webpack
 弄完後會多了個 package.json
 
 ## 定義入口檔案 init.js
-init.js裡面加入
+新增 init.js
 ```javascript
 import './base.js';
 ```
-順便寫一下 base.js
+順便也加一下 base.js
 ```javascript
 //js測試
 console.log('234234234');
@@ -72,7 +69,7 @@ package.json 的 scripts 加入一段
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "webpack inc/js/.js --output dist/bundle.js --mode development" //加這裡
+		"build": "webpack inc/js/init.js --output dist/bundle.js --mode development" //加這裡
 	},
 	"author": "",
 	"license": "ISC"
@@ -87,9 +84,8 @@ npm run build
 
 ### 使用 webpack.config.js
 接下來，要將 build 的指令外放到設定檔去（webpack.config.js）
-命名一個檔案，叫做 webpack.config.js
 
-並寫入
+在 webpack.config.js 寫入
 ```javascript
 var path = require('path');
  
@@ -153,13 +149,13 @@ body {
 npm install css-loader style-loader --save-dev
 ```
 init.js 增加引入 fake.css
-```javascript=
+```javascript
 import './base.js';
 
 import '../css/fake.css';（增加這行）
 ```
 webpack.config.js多寫一個module
-```javascript=
+```javascript
 var path = require('path');
  
 module.exports = {
@@ -295,15 +291,15 @@ module.exports = {
                 test: /\.(scss|sass)$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    "css-loader",
-                    "sass-loader"
+                    'css-loader',
+                    'sass-loade'
                 ]
             }
         ]
     },
     plugins: [ //新增這個plugins的這坨
     	new MiniCssExtractPlugin({
-            filename: "bundle.css"
+            filename: 'bundle.css'
         })
     ]
 }
@@ -312,7 +308,7 @@ module.exports = {
 ## 安裝 jQuery 跟 Bootstrap 4
 下載jQ
 ```
-npm --save -dev jquery
+npm install jquery
 ```
 在 base.js 加幾行jquery 測試
 ```jquery
@@ -338,7 +334,7 @@ import '../sass/button.sass';
 ```javascript
 var path = require('path');
 var webpack = require('webpack'); //新增
-var MiniCssExtractPlugin = require("mini-css-extract-plugin");
+var MiniCssExtractPlugin = require('mini-css-extract-plugin');
  
 module.exports = {
     mode: 'development',
@@ -360,15 +356,15 @@ module.exports = {
                 test: /\.(scss|sass)$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    "css-loader",
-                    "sass-loader"
+                    'css-loader',
+                    'sass-loader'
                 ]
             }
         ]
     },
     plugins: [
     	new MiniCssExtractPlugin({
-            filename: "bundle.css"
+            filename: 'bundle.css'
         }),
         new webpack.ProvidePlugin({ //新增這裡
             $: 'jquery',
@@ -381,7 +377,7 @@ module.exports = {
 
 接著，下載 Bootstrap 4 跟他相依的 popper.js
 ```
-npm install --save -dev popper.js bootstrap
+npm install popper.js bootstrap
 ```
 ini.js 加
 ```javascript
@@ -399,7 +395,7 @@ webpack.config.js 也加兩行
 ```javascript
 var path = require('path');
 var webpack = require('webpack');
-var MiniCssExtractPlugin = require("mini-css-extract-plugin");
+var MiniCssExtractPlugin = require('mini-css-extract-plugin');
  
 module.exports = {
     mode: 'development',
@@ -421,15 +417,15 @@ module.exports = {
                 test: /\.(scss|sass)$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    "css-loader",
-                    "sass-loader"
+                    'css-loader',
+                    'sass-loader'
                 ]
             }
         ]
     },
     plugins: [
     	new MiniCssExtractPlugin({
-            filename: "bundle.css"
+            filename: 'bundle.css'
         }),
         new webpack.ProvidePlugin({
             $: 'jquery',
@@ -542,7 +538,7 @@ npm i -D url-loader
 ```javascript
 var path = require('path');
 var webpack = require('webpack');
-var MiniCssExtractPlugin = require("mini-css-extract-plugin");
+var MiniCssExtractPlugin = require('mini-css-extract-plugin');
  
 module.exports = {
     mode: 'development',
@@ -564,19 +560,19 @@ module.exports = {
                 test: /\.(scss|sass)$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    "css-loader",
-                    "sass-loader"
+                    'css-loader',
+                    'sass-loader'
                 ]
             },
             { //加這裡
                 test: /\.(gif|png|jpg|eot|wof|woff|woff2|ttf|svg)$/,
-                loader: "url-loader"
+                loader: 'url-loader'
             }
         ]
     },
     plugins: [
     	new MiniCssExtractPlugin({
-            filename: "bundle.css"
+            filename: 'bundle.css'
         }),
         new webpack.ProvidePlugin({
             $: 'jquery',
@@ -624,13 +620,13 @@ import '../sass/_color.sass';
 import '../sass/style.sass';
 import '../sass/button.sass';
 
-var $base = require('./base.js'); //新增
-window.$base = new $base(); //新增
+var $base=require('./base.js'); //新增
+window.$base=new $base(); //新增
 ```
 修改 base.js
 用 module 包起來，用 this 命名 function
 ```javascript
-module.exports = function $base() {
+module.exports=function $base() {
 	//js測試
 	console.log('234234234');
 
@@ -703,3 +699,4 @@ module.exports = function $base() {
 * http://www.mrmu.com.tw/2017/08/18/webpack-tutorial/
 * http://www.mrmu.com.tw/2017/08/18/webpack-tutorial2-css-scss/
 * https://qiita.com/riversun/items/d27f6d3ab7aaa119deab
+* https://ics.media/entry/17376/
