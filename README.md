@@ -269,7 +269,7 @@ import '../sass/button.sass'; //新增
 修改 webpack.config.js
 ```javascript
 var path = require('path');
-var MiniCssExtractPlugin = require("mini-css-extract-plugin"); //新增
+var MiniCssExtractPlugin = require('mini-css-extract-plugin'); //新增
  
 module.exports = {
     mode: 'development',
@@ -292,7 +292,7 @@ module.exports = {
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader',
-                    'sass-loade'
+                    'sass-loader'
                 ]
             }
         ]
@@ -566,7 +566,7 @@ module.exports = {
             },
             { //加這裡
                 test: /\.(gif|png|jpg|eot|wof|woff|woff2|ttf|svg)$/,
-                loader: 'url-loader'
+                use: 'url-loader'
             }
         ]
     },
